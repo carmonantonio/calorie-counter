@@ -11,9 +11,9 @@ var myapp = new Vue({
       totalCarbs: '',
       totalProtein: '',
       entries: [
-        { id: 3, description:'This is an item', calories: 223, fat: 12, carbs: 30, protein: 10 },
-        { id: 2, description:'This is also an item', calories: 50, fat: 1, carbs: 10, protein: 1 },
-        { id: 1, description:'Hey, me, too!', calories: 175, fat: 3, carbs: 15, protein: 8 }
+        { id: 3, description:'Esto es una entrada de ejemplo', calories: 223, fat: 12, carbs: 30, protein: 10 },
+        { id: 2, description:'Esto tambien', calories: 50, fat: 1, carbs: 10, protein: 1 },
+        { id: 1, description:'Soy una comida chula', calories: 175, fat: 3, carbs: 15, protein: 8 }
       ]
     },
     methods: {
@@ -32,7 +32,7 @@ var myapp = new Vue({
           this.newProtein = ''
           calculateTotals(this)
         } else {
-          alert("You need at least a description and calories!")
+          alert("Necesita ingresar descripción y calorias")
         }
       },
       removeEntry: function (index) {

@@ -5,16 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Registro de calorias</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,900" rel="stylesheet" />
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" />
 </head>
 <body>
     <div id="app">
-        <h1 class="title"><i class="fa fa-heartbeat"></i> Vue.js Calorie Counter</h1>
+        <h1 class="title"><i class="fa fa-heartbeat"></i> Contador de Calorias</h1>
         <div class="entry header">
-          <div class="long">Description</div>
-          <div class="short">Calories</div>
-          <div class="short">Fat</div>
-          <div class="short">Carbs</div>
-          <div class="short">Protein</div>
+          <div class="long">Descripción</div>
+          <div class="short">Calorias</div>
+          <div class="short">Grasas</div>
+          <div class="short">Carbohidratos</div>
+          <div class="short">Proteinas</div>
         </div>
         <div class="entry" v-for="entry in entries" transition="fade">
           <input type="text" name="description-{{ entry.id }}" v-model="entry.description" class="long" v-on:keyup.enter="saveEntry">
@@ -27,18 +29,18 @@
           </button>
         </div>
         <div class="totals">
-          <div class="long">Totals:</div>
+          <div class="long">Totales:</div>
           <div class="short">{{ totalCalories }}</div>
           <div class="short">{{ totalFat }}</div>
           <div class="short">{{ totalCarbs }}</div>
           <div class="short">{{ totalProtein }}</div>
         </div>
         <div class="new">
-          <input type="text" v-model="newDescription" v-on:keyup.enter="addEntry" class="long" placeholder="Description">
-          <input type="number" v-model="newCalories" v-on:keyup.enter="addEntry" class="short" placeholder="Calories">
-          <input type="number" v-model="newFat" v-on:keyup.enter="addEntry" class="short" placeholder="Fat">
-          <input type="number" v-model="newCarbs" v-on:keyup.enter="addEntry" class="short" placeholder="Carbs">
-          <input type="number" v-model="newProtein" v-on:keyup.enter="addEntry" class="short" placeholder="Protein">
+          <input type="text" v-model="newDescription" v-on:keyup.enter="addEntry" class="long" placeholder="Descripción">
+          <input type="number" v-model="newCalories" v-on:keyup.enter="addEntry" class="short" placeholder="Calorias">
+          <input type="number" v-model="newFat" v-on:keyup.enter="addEntry" class="short" placeholder="Grasas">
+          <input type="number" v-model="newCarbs" v-on:keyup.enter="addEntry" class="short" placeholder="Carbohidratos">
+          <input type="number" v-model="newProtein" v-on:keyup.enter="addEntry" class="short" placeholder="Proteinas">
           <button class="material-button" v-on:click="addEntry()">
             <i class="fa fa-plus"></i>
           </button>
